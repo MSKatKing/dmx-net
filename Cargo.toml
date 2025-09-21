@@ -1,7 +1,10 @@
 [package]
 name = "dmx-net"
 version = "0.1.0"
+authors = ["Mark Schaefges"]
 edition = "2024"
+description = "A robust Rust crate for interacting with the DMX protocol, as well as for interacting with DMX network protocols (Art-Net, sACN, etc)"
 readme = "README.md"
+repository = "https://github.com/MSKatKing/dmx-net"
 
 [dependencies]
