@@ -9,6 +9,7 @@ repository = "https://github.com/MSKatKing/dmx-net"
 
 [features]
 default = []
-serial = []
+serial = ["serialport/default"]
 
 [dependencies]
+serialport = "4.7.3"
