@@ -7,4 +7,8 @@ description = "A robust Rust crate for interacting with the DMX protocol, as wel
 readme = "README.md"
 repository = "https://github.com/MSKatKing/dmx-net"
 
+[features]
+default = []
+serial = []
+
 [dependencies]
