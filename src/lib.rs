@@ -2,6 +2,7 @@
 
 #[cfg(feature = "serial")]
 mod serial;
+mod art_net;
 
 #[cfg(feature = "serial")]
 pub use serial::*;
