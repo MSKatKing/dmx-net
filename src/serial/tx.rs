@@ -38,7 +38,7 @@ pub trait SerialDMXTransmitter {
 }
 
 #[cfg(feature = "std")]
-pub struct DMXSerialPort<Port: serialport::SerialPort>(Port);
+pub struct DMXSerialPort<Port: serialport::SerialPort + ?Sized>(pub(super) Box<Port>);
 
 #[cfg(feature = "std")]
 impl<Port: serialport::SerialPort> SerialDMXTransmitter for DMXSerialPort<Port> {

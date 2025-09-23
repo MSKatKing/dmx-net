@@ -1,5 +1,6 @@
 mod tx;
 
+use serialport::SerialPort;
 pub use tx::*;
 
 /// Sends DMX data using a raw serial transmitter.
@@ -14,4 +15,16 @@ pub fn send_serial_dmx(transmitter: &mut dyn SerialDMXTransmitter, data: &[u8]) 
 
     transmitter.send_break();
     transmitter.write(&dmx_frame);
+}
+
+#[cfg(feature = "std")]
+pub fn open_port(port_name: impl Into<String>) -> DMXSerialPort<dyn SerialPort> {
+    let port = serialport::new(port_name.into().as_str(), 250000)
+        .data_bits(serialport::DataBits::Eight)
+        .stop_bits(serialport::StopBits::Two)
+        .flow_control(serialport::FlowControl::None)
+        .parity(serialport::Parity::None)
+        .open().expect("Failed to open serial port");
+
+    DMXSerialPort(port)
 }
