@@ -11,6 +11,8 @@ repository = "https://github.com/MSKatKing/dmx-net"
 default = ["std"]
 std = ["serialport/default"]
 serial = []
+art_net = []
+sacn = []
 
 [dependencies]
 serialport = { version = "4.7.3", optional = true }
