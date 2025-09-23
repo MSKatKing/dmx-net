@@ -8,8 +8,9 @@ readme = "README.md"
 repository = "https://github.com/MSKatKing/dmx-net"
 
 [features]
-default = []
-serial = ["serialport/default"]
+default = ["std"]
+std = ["serialport/default"]
+serial = []
 
 [dependencies]
-serialport = "4.7.3"
+serialport = { version = "4.7.3", optional = true }
